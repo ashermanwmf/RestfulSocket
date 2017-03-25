@@ -6,7 +6,7 @@ restful response to a websocket event listener.
 
 # Getting Started
 
-1. Install RestfulSocket:
+1. Install RestfulSocket: (COMING SOON)
 
 ```
 npm install -save RestfulSocket
