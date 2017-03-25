@@ -1,0 +1,16 @@
+{
+  "name": "restfulsocket",
+  "version": "1.0.0",
+  "author": "Andrew Sherman",
+  "scripts": {
+    "test": "mocha test/**/*-spec.js test/*-spec.js"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "jasmine": "^2.5.3",
+    "mocha": "^3.2.0",
+    "mock-socket": "^6.0.4",
+    "sinon": "^2.0.0"
+  },
+  "license": "ISC"
+}
