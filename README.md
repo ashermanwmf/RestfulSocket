@@ -28,7 +28,7 @@ const onerror = () =>{ /* Function for socket on error* /};
 const restSocket = new RestfulSocket('ws://localhost/', onopen, onclose, onerror);
 
 restSocket.findSocketMessage((socketMessageData) =>{
-  /* define a filter to find and return socket message */
+  /* define a filter to find and return socket message from socketMessageData object */
 });
 
 restSocket.get('localhost/api/initialData')
@@ -45,7 +45,7 @@ restSocket.get('localhost/api/initialData')
 const restSocket = new RestfulSocket('ws://localhost/', onopen, onclose, onerror);
 
 restSocket.findSocketMessage((socketMessageData) =>{
-  /* define a filter to find and return socket message */
+  /* define a filter to find and return socket message from socketMessageData object */
 });
 
 restSocket.get('localhost/api/initialData')
