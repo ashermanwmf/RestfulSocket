@@ -9,21 +9,29 @@ restful response to a websocket event listener.
 1. Install RestfulSocket: (COMING SOON)
 
 ```
-npm install -save RestfulSocket
+npm install -save restfulsocket
 ```
 
 2. Import RestfulSocket: 
 
 ```
-import RestfulSocket from 'restfulSocket'
+import RestfulSocket from 'restfulsocket'
 ```
 
 3. Use RestfulSocket:
 
 ```
+const onopen = () =>{ /* Function for socket on open */ };
+const onclose = () =>{ /* Function for socket on close */ };
+const onerror = () =>{ /* Function for socket on error* /};
+
 const restSocket = new RestfulSocket('ws://localhost/', onopen, onclose, onerror);
 
-RestSocket.get('localhost/api/initialData')
+restSocket.findSocketMessage((socketMessageData) =>{
+  /* define a filter to find and return socket message */
+});
+
+restSocket.get('localhost/api/initialData')
   .on('sampleMessage')
   .then((data) => {
     //DATA is an array of objects returned from fetch promises
@@ -34,9 +42,13 @@ RestSocket.get('localhost/api/initialData')
 4. Complex use case:
 
 ```
-const RestSocket = new RestfulSocket('ws://localhost/', onopen, onclose, onerror);
+const restSocket = new RestfulSocket('ws://localhost/', onopen, onclose, onerror);
 
-RestSocket.get('localhost/api/initialData')
+restSocket.findSocketMessage((socketMessageData) =>{
+  /* define a filter to find and return socket message */
+});
+
+restSocket.get('localhost/api/initialData')
   .post('localhost/api/initialPost', requestObject)
   .on('init')
   .then((data) => {
@@ -44,7 +56,7 @@ RestSocket.get('localhost/api/initialData')
   })
   .catch(console.log);
 
-RestSocket.get('localhost/api/updateData')
+restSocket.get('localhost/api/updateData')
   .get('localhost/api/secondaryData', requestObject)
   .on('update')
   .then((data) => {
