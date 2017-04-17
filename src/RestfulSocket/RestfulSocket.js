@@ -8,10 +8,10 @@ class RestfulSocket {
     try {
       this.__setRequests__ = {};
       this._setSocketURL = socketURL;
-      this._setSocket = new WebSocket(this._getSocketURL, 'echo-protocol');
       this._setOnopen = onopen;
       this._setOnclose = onclose;
       this._setOnerror = onerror;
+      this._setSocket = new WebSocket(this._getSocketURL, 'echo-protocol');
     } catch(e) {
       console.log(e);
     }
@@ -208,6 +208,7 @@ class RestfulSocket {
       this._socket.onmessage = (event) =>{
         const findSocketMessage = this._getFindSocketMessage;
         const serverMessage = findSocketMessage(event);
+        
         resolve(this._generatePromiseAll(serverMessage));
       };
     });

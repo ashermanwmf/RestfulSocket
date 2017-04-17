@@ -31,7 +31,7 @@ restSocket.findSocketMessage((socketMessageData) =>{
   /* define a filter to find and return socket message from socketMessageData object */
 });
 
-restSocket.get('localhost/api/initialData')
+restSocket.get('localhost/api/initialData', requestObject)
   .on('sampleMessage')
   .then((data) => {
     //DATA is an array of objects returned from fetch promises
@@ -48,7 +48,7 @@ restSocket.findSocketMessage((socketMessageData) =>{
   /* define a filter to find and return socket message from socketMessageData object */
 });
 
-restSocket.get('localhost/api/initialData')
+restSocket.get('localhost/api/initialData', requestObject)
   .post('localhost/api/initialPost', requestObject)
   .on('init')
   .then((data) => {
@@ -56,7 +56,7 @@ restSocket.get('localhost/api/initialData')
   })
   .catch(console.log);
 
-restSocket.get('localhost/api/updateData')
+restSocket.get('localhost/api/updateData', requestObject)
   .get('localhost/api/secondaryData', requestObject)
   .on('update')
   .then((data) => {
