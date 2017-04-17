@@ -2,7 +2,7 @@
   "name": "restfulsocket",
   "version": "1.0.0",
   "author": "Andrew Sherman",
-  "main": "dist/bundle.js",
+  "main": "./dist/bundle.js",
   "scripts": {
     "build": "webpack"
   },
