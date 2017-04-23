@@ -130,6 +130,10 @@ class RestfulSocket {
     return this._findSocketMessage;
   }
 
+  get socket() {
+    return this._socket;
+  }
+
   _generatePromiseAll(message) {
     const request = this._getRequests[message];
     const urls = request.url;

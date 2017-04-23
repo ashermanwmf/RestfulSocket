@@ -21,7 +21,11 @@ import RestfulSocket from 'restfulsocket'
 3. Use RestfulSocket:
 
 ```
-const onopen = () =>{ /* Function for socket on open */ };
+// restSocket.socket => socket created from new WebSocket(...)
+const onopen = () =>{ 
+  /* Function for socket on open */ 
+  restSocket.socket.send(...);
+};
 const onclose = () =>{ /* Function for socket on close */ };
 const onerror = () =>{ /* Function for socket on error* /};
 
